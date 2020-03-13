@@ -7,6 +7,12 @@
 
 * json-server db.json -m ./node_modules/json-server-auth -p 3001
 
+# Certificados
+
+* Angular Parte 1: Fundamentos - https://cursos.alura.com.br/certificate/pedro-missaglia/angular-fundamentos
+* Angular Parte 2: Autenticação, Forms e Lazy Loading - https://cursos.alura.com.br/certificate/pedro-missaglia/angular-autenticacao
+
+
 # Desafio Portinari - 1ºsemetre 2020
 
 A TOTVS quer lançar um site de lista de tarefas. Foi feita uma planning com o time o qual você é integrante e a sprint começou. Suas tarefas são as seguintes:
