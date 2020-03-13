@@ -1,0 +1,63 @@
+<po-button
+    p-icon="po-icon po-icon-settings"
+    p-type="default"
+    (p-click)="modalOpen()">
+</po-button>
+
+<div class="po-row">
+    <po-modal
+    [p-title]="modalText"
+    [p-primary-action]="confirm"
+    [p-secondary-action]="close"
+    p-size="lg">
+
+        <form [formGroup]="taskConfigForm">
+            <div class="po-row">
+                <div class="col-6" style="padding-top: 80px;">
+                    <p style="text-align: center;">
+                        Preview
+                    </p>
+                    <po-widget
+                        [p-title]="previewTitle"
+                        p-height="200">
+
+                        <div class="po-text-center">
+                            <div class="po-font-text-large-bold" p-icon="po-icon po-icon-clock"> {{previewDetail}} </div>
+                            <div class="po-font-text">Prazo: {{previewDatePicker | date: 'dd/MM/yyyy'}}</div>
+                            <span class="po-font-text">Categoria: {{previewCategory}} </span>
+                        </div> 
+                    </po-widget>
+                </div>
+                <div class="col-6 form-group">
+                    <po-input
+                        [(ngModel)]="previewTitle"
+                        formControlName="title"
+                        name="title"
+                        p-label="Título"
+                        [p-placeholder]="taskTitle">
+                    </po-input>
+                    <po-textarea
+                        [(ngModel)]="previewDetail"
+                        formControlName="description"
+                        p-label="Descrição"
+                        [p-placeholder]="taskDetail">
+                    </po-textarea>
+                    <po-datepicker
+                        [(ngModel)]="previewDatePicker"
+                        formControlName="deadline"
+                        name="datepicker"
+                        p-label="Prazo Final"
+                        [p-min-date]="currentDate">
+                    </po-datepicker>
+                    <po-select
+                        [(ngModel)]="previewCategory"
+                        formControlName="category"
+                        name="icon"
+                        p-label="Categoria"
+                        [p-options]="iconOptions">
+                    </po-select>
+                </div>
+            </div>
+        </form>    
+    </po-modal>
+</div>

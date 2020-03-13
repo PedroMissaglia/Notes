@@ -1,0 +1,65 @@
+<div class="po-row">
+    <div class="btn">
+        <po-button
+            (p-click)="modalOpen()"
+            [p-label]="title"
+            p-icon="search"
+            p-type="primary">
+        </po-button>
+    </div> 
+</div>
+<div class="po-row">
+    <po-modal
+    [p-title]="title"
+    [p-primary-action]="confirm"
+    [p-secondary-action]="close"
+    p-size="lg">
+
+        <form [formGroup]="taskForm">
+            <div class="po-row">
+                <div class="col-6" style="padding-top: 80px;">
+                    <p style="text-align: center;">
+                        Preview
+                    </p>
+                    <ta-totvs-card 
+                        [title]="previewTitle"
+                        [detail]="previewDescription"
+                        [datRef]="datRef"
+                        [deadline]="previewDatePicker | date : 'dd/MM/yyyy'"
+                        [category]="previewCategory"
+                        size="250"
+                        [isTaskList]=showButton>
+                    </ta-totvs-card>
+                </div>
+                <div class="col-6 form-group">
+                    <po-input
+                        [(ngModel)]="previewTitle"
+                        formControlName="title"
+                        name="title"
+                        p-label="Título">
+                    </po-input>
+                    <po-textarea
+                        [(ngModel)]="previewDescription"
+                        formControlName="description"
+                        p-label="Descrição">
+                    </po-textarea>
+                    <po-datepicker
+                        [(ngModel)]="previewDatePicker"
+                        formControlName="deadline"
+                        name="datepicker"
+                        p-label="Prazo Final"
+                        [p-min-date]="currentDate">
+                    </po-datepicker>
+                    <po-select
+                        [(ngModel)]="previewCategory"
+                        formControlName="category"
+                        name="icon"
+                        p-clean
+                        p-label="Categoria"
+                        [p-options]="iconOptions">
+                    </po-select>
+                </div>
+            </div>
+        </form>    
+    </po-modal>
+</div>

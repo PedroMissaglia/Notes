@@ -1,0 +1,48 @@
+<po-button
+    class="po-pull-right"
+    p-icon="po-icon po-icon-ok"
+    p-label="Concluir"
+    p-type="primary"
+    (p-click)="modalOpen()"
+    p-disabled="confirmDisable">
+</po-button>
+
+<div class="po-row">
+    <po-modal
+    [p-title]="modalText"
+    [p-primary-action]="confirm"
+    [p-secondary-action]="close"
+    p-size="lg">
+
+        <form [formGroup]="taskConcludeForm">    
+            <div class="po-row">
+                <div class="col-6" style="padding-top: 80px;">
+                    <po-widget
+                    [p-title]="taskTitle"
+                    p-height="200">
+
+                        <div class="po-text-center">
+                            <div class="po-font-text-large-bold" p-icon="po-icon po-icon-clock"> {{taskDetail}} </div>
+                            <div class="po-font-text">Prazo: {{taskDeadline}}</div>
+                            <span class="po-font-text">Categoria: {{taskCategory}} </span>
+                        </div> 
+                    </po-widget>
+                </div>   
+                <div class="col-6">
+                    <po-datepicker
+                        formControlName="concludedDate"    
+                        name="datepicker"
+                        p-label="Data de Conclusão"
+                        [p-min-date]="currentDate"
+                        p-readonly="true"
+                        [p-placeholder]="currentDate | date : 'dd/MM/yyyy'">
+                    </po-datepicker>
+                    <po-textarea
+                        formControlName="concludedText"
+                        p-label="Descrição">
+                </po-textarea>
+                </div> 
+            </div>
+        </form>    
+    </po-modal>
+</div>

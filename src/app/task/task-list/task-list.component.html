@@ -1,0 +1,27 @@
+<div class="po-wrapper">
+    <po-page-dynamic-search 
+        (p-quick-search)="onQuickSearch($event)"
+        (p-change-disclaimers)="onChangeDisclaimers($event)"
+        p-title="Lista de Tarefas">
+           
+        <div>
+            <ta-totvs-add-task-modal (sendEventTask)="receiverTask($event)"></ta-totvs-add-task-modal>
+            <br>
+        </div>
+
+        <div>
+            <ta-totvs-tasks
+                [task]="task"
+                [eventNewTask]="eventNewTaskSubject.asObservable()"
+                [eventLoadNewPage]="eventLoadNewPageSubject.asObservable()"
+                [eventQuickSearch]="eventQuickSearchSubject.asObservable()"
+                [eventChangeDisclaimers]="eventChangeDisclaimersSubject.asObservable()">
+            </ta-totvs-tasks> 
+        </div>
+
+        <ta-totvs-load *ngIf="task.length"
+            (sendEventLoad)="receiverEventLoad($event)"
+            [hasMore]="hasMore">
+        </ta-totvs-load>
+    </po-page-dynamic-search>
+</div>    

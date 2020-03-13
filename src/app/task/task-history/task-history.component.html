@@ -1,0 +1,67 @@
+<div class="po-wrapper">
+  <po-page-dynamic-search
+    p-title="Histórico de Tarefas"
+    (p-quick-search)="onQuickSearch($event)"
+    (p-change-disclaimers)="onChangeDisclaimers($event)">  
+    <po-table
+          [p-items]="completeTasks"
+          [p-columns]="columns"
+          [p-actions]="actions"
+          (p-show-more)="showMore($event)"
+          [p-show-more-disabled]="showMoreDisabled"
+          [p-sort]="true">
+    </po-table>
+  </po-page-dynamic-search>
+</div>
+
+<po-modal
+  p-click-out="true"
+  p-size="auto"
+  p-title="Exclusão do histórico"
+  [p-primary-action]="confirm"
+  [p-secondary-action]="close"
+  >
+
+    <div class="po-row">
+      <po-info
+        class="po-sm-6"
+        p-label="Título"
+        [p-value]="previewTaskHistory?.title">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Descrição"
+        [p-value]="previewTaskHistory?.detail">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Categoria"
+        [p-value]="previewTaskHistory?.category">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Data de Criação"
+        [p-value]="previewTaskHistory?.refdate | date: 'dd/MM/yyyy'">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Prazo Final"
+        [p-value]="previewTaskHistory?.deadline | date: 'dd/MM/yyyy'">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Prazo Final"
+        [p-value]="previewTaskHistory?.concludedDate | date: 'dd/MM/yyyy'">
+      </po-info>
+      <po-info
+        class="po-sm-6"
+        p-label="Prazo Final"
+        [p-value]="previewTaskHistory?.concludedText">
+      </po-info>
+    </div>
+    <!-- <po-table
+          [p-items]="previewTaskHistory"
+          [p-columns]="columns">
+    </po-table> -->
+
+</po-modal>

@@ -1,0 +1,40 @@
+<div class="container">
+  <po-widget
+    [p-title]="title"
+    [p-height]="size">
+
+    <div class="po-text-center">
+        <div class="po-font-text-large-bold" p-icon="po-icon po-icon-clock"> {{detail}} </div>
+        <div class="po-font-text">Prazo: {{deadline}}</div>
+        <div class="po-font-text">Criado: {{datRef}}</div>
+        <span class="po-font-text">Categoria: {{category}} </span>
+    </div> 
+    <br>
+    <div 
+      *ngIf="alertStatus" class="po-text-center" style="font-style: oblique;">
+      <div class="po-font-text-large-bold" p-icon="po-icon po-icon-clock"> Atenção com o prazo da tarefa </div>
+    </div> 
+    <br>
+
+    <div class="po-row" *ngIf="isTaskList">
+        <ta-totvs-config class="col-6"
+          [taskId]="id"
+          [taskTitle]="title"
+          [taskDetail]="detail"
+          [taskCategory]="category"
+          [taskDeadline]="deadline"
+          (sendEventAlterTask)="receiverAlterTask($event)">
+        </ta-totvs-config>
+        <ta-totvs-confirm 
+          class="col-6"
+          [taskId]="id"
+          [taskTitle]="title"
+          [taskDetail]="detail"
+          [taskCategory]="category"
+          [taskDeadline]="deadline"
+          (sendEventPop)="receiverEventPop($event)">
+        </ta-totvs-confirm>
+    </div>
+
+  </po-widget>
+</div>

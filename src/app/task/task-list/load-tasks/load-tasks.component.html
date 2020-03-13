@@ -1,0 +1,11 @@
+<div style="text-align: center;" *ngIf="hasMore; else noMoreDatatoLoad">
+    <po-button
+        p-type='primary'
+        p-label='Carregar mais tarefas'
+        (click)="load()">
+    </po-button>
+</div>
+
+<ng-template #noMoreDatatoLoad>
+    <p class="text-center text-muted">Não existem mais tarefas a serem carregadas</p>
+</ng-template>

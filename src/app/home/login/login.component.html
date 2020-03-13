@@ -1,0 +1,9 @@
+<po-page-login
+    p-product-name="Notes"
+    p-register-url="/signup"
+    (p-login-submit)="checkLogin($event)"
+    p-login-pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+    [p-password-errors]="passwordErrors"
+    (p-login-change)="loginChange()"
+    (p-password-change)="passwordChange()">
+</po-page-login>

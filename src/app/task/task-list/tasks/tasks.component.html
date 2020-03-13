@@ -1,0 +1,22 @@
+<p class="text-center text-muted" *ngIf="!task.length">
+    Nenhuma tarefa encontrada
+</p>
+<ol class="list-unstyled">
+    <li *ngFor="let cols of rows" class="row gutters">
+        <div *ngFor="let task of cols" class="col-4">
+            <ta-totvs-card
+                [title]="task.title" 
+                [detail]="task.detail" 
+                [datRef]="task.refdate | date : 'dd/MM/yyyy'"
+                [deadline]="task.deadline | date : 'dd/MM/yyyy'"
+                [category]="task.category"
+                [id]="task.id"
+                [size]="300"
+                (sendEventPop)="receiverEventPop($event)"
+                (sendEventAlterTask)="receiverEventAlterTask($event)">
+            </ta-totvs-card>
+            <br>
+        </div> 
+    </li>
+</ol>
+

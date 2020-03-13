@@ -1,0 +1,57 @@
+
+<div>
+    <div class="po-text-center ">
+        <div class="po-page-login-header-title po-mb-sm-1">Bem-vindo ao Notes</div>
+    </div>
+    <form [formGroup]="formSignup">
+        <po-input
+            p-label="Primeiro Nome"
+            p-icon="po-icon po-icon-user"
+            formControlName="firstname"
+            p-placeholder="Insira seu primeiro nome"
+            p-minlength="3"
+            p-error-pattern="Verifique se o primeiro nome possui no mínimo 3 caracteres.">
+        </po-input>
+        <po-input
+            p-label="Sobrenome"
+            p-icon="po-icon po-icon-user"
+            formControlName="lastname"
+            p-placeholder="Insira seu último nome"
+            p-minlength="3"
+            p-error-pattern="Verifique se o sobrenome possui no mínimo 3 caracteres.">
+        </po-input>
+        <po-email
+            p-label="Email"
+            formControlName="email"
+            p-placeholder="Insira seu email"
+            p-pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            p-error-pattern="E-mail inválido.">
+
+        </po-email>
+        <po-password
+            p-label="Senha"
+            formControlName="password"
+            p-placeholder="Insira sua senha"
+            p-minlength="6"
+            p-error-pattern="Verifique se a senha possui no mínimo 6 caracteres."
+            >
+        </po-password>
+
+    </form>
+</div>
+<div class="po-row" style="padding-top: 20px;">
+    <div class="po-text-center col-6">
+        <po-button
+            p-label="Já tenho cadastro"
+            [routerLink]="['']">
+        </po-button>
+    </div>
+    <div class="po-text-center col-6">
+        <po-button
+            [p-disabled]="formSignup.invalid" 
+            p-label="Cadastrar"
+            p-type="primary"
+            (p-click)="signup()">
+        </po-button>
+    </div>
+</div>    
