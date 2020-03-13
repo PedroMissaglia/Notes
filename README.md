@@ -3,7 +3,7 @@
 * npm install
 * ng serve
 
-# Abrir um segundo terminal no VSCode (recomendando utilizar o recurso Split Terminal) para inicializar a Fake Api
+# Abrir um segundo terminal no VSCode (recomendado utilizar o recurso Split Terminal) para inicializar a Fake Api
 
 * json-server db.json -m ./node_modules/json-server-auth -p 3001
 
