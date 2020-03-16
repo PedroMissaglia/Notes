@@ -11,6 +11,8 @@
 
 * Angular Parte 1: Fundamentos - https://cursos.alura.com.br/certificate/pedro-missaglia/angular-fundamentos
 * Angular Parte 2: Autenticação, Forms e Lazy Loading - https://cursos.alura.com.br/certificate/pedro-missaglia/angular-autenticacao
+* JavaScript avançado I: ES6, orientação a objetos e padrões de projetos - https://cursos.alura.com.br/certificate/pedro-missaglia/javascript-es6-orientacao-a-objetos-parte-1
+* TypeScript parte 2: Mais técnicas e boas práticas - https://cursos.alura.com.br/certificate/pedro-missaglia/typescript-parte2
 
 
 # Desafio Portinari - 1ºsemetre 2020
