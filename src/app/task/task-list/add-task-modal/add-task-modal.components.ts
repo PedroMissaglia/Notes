@@ -57,7 +57,7 @@ export class AddTaskModalComponent implements OnInit{
                 deadline: ['', Validators.required],
                 category: ['', Validators.required]})   
                 
-        this.datRef = this.datePipe.transform(this.currentDate, "dd/MM/yyyy");      
+        //this.datRef = this.datePipe.transform(this.currentDate, "dd/MM/yyyy");      
                     
         this.userId = parseInt(this.activatedRoute.snapshot.params.userId);
     }   

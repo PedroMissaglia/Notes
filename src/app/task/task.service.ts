@@ -17,6 +17,7 @@ export class TaskService {
     static criouNovaTask = new EventEmitter<Task>();
     array : Task[];
     currentDate: string;
+    date: Date = new Date();
 
     constructor(
         private http: HttpClient,
@@ -51,7 +52,7 @@ export class TaskService {
 
     addTask(form : FormGroup, currentDate: string, userId){
 
-        currentDate = this.datePipe.transform(currentDate, "yyyy-dd-MM");
+        this.currentDate = this.datePipe.transform(this.date, "yyyy-MM-dd");
         return this.http.post<Task[]>(API, 
             {   
                 ownerId: userId,
@@ -59,7 +60,7 @@ export class TaskService {
                 detail: form.get('description').value,
                 deadline: form.get('deadline').value,
                 category: form.get('category').value,
-                refdate: currentDate,
+                refdate: this.currentDate,
                 status: 'pending'})
     }
 
