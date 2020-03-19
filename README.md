@@ -63,13 +63,3 @@ Bônus:
 * Somente tarefas concluídas podem ser excluídas, e deve apresentar uma confirmação ao excluir, questionando se tenho certeza desta ação. :heavy_check_mark:
 * Posso alterar apenas as tarefas pendentes. :heavy_check_mark:
 * Ao alterar o prazo, não deve ser permitido utilizar uma data no passado. :heavy_check_mark:
-
-
-
-##Algumas orientações:
-
-* O projeto deve ser entregue através de um Pull Request neste próprio repositório.
-* Utilize uma fake API (http://www.fabricadecodigo.com/json-server/), para simular integração com um servidor REST.
-* Seja criativo no layout de suas telas, mas sempre que possível use como base o Guideline de Interfaces da TOTVS.
-* O desafio é sobre interação, não precisa fazer tudo, basta ir fazendo os pedaços que se sente mais confortável e entregando aos poucos.
-* Organize seus commits. Sua utilização do git faz parte do desafio.
