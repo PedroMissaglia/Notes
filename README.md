@@ -1,4 +1,4 @@
-# Para inicializar o projeto Totvs Notes é necessário realizar os seguintes comandos no terminal
+# Para inicializar o projeto Notes é necessário realizar os seguintes comandos no terminal
 
 * npm install
 * ng serve
